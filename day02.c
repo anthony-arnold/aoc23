@@ -31,20 +31,26 @@ int main() {
         int possible = 1;
         while (scanf("%d %[a-z]", &d, colour) == 2) {
             fgetc(stdin); // discard separator
+
+            // Count how many of each colour
             int c;
             if (strcmp(colour, "red") == 0) c = RED;
             else if (strcmp(colour, "green") == 0) c = GREEN;
             else if (strcmp(colour, "blue") == 0) c = BLUE;
-            else abort();
+            else abort(); // :S
 
+            // Check for possibility
             possible &= d <= MAX_COLOUR[c];
+
+            // Record max of each colour seen
             minimum[c] = max(minimum[c], d);
         }
+
+        // add em up
         if (possible) {
             sum += game;
         }
         sumprod += minimum[0] * minimum[1] * minimum[2];
-
         game++;
     }
 
