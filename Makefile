@@ -1,8 +1,11 @@
-CFLAGS := -std=c11
+CFLAGS ?= -std=c11 -O2
 
 DAYS := $(wildcard day*.c)
 EXES := $(patsubst %.c,%,$(DAYS))
 
-.PHONY: all
+.PHONY: all clean
 
 all: $(EXES)
+
+clean:
+	$(RM) $(EXES)
