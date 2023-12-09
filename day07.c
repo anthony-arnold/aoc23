@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #define MAX_HANDS 1024
 
@@ -87,7 +88,7 @@ int type(char* s) {
             if (t[i] == 1) {
                 if (tn[i] == 2) return FOUR_KIND;
                 return FULL_HOUSE;
-            } 
+            }
         }
 
 #endif
