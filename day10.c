@@ -220,13 +220,7 @@ int main() {
 
 
             if (c != '.') continue;
-            if (in) {
-                inside++;
-                grid[x][y] = 'I';
-            }
-            else {
-                grid[x][y] = 'O';
-            }
+            inside += in;
         }
     }
 
